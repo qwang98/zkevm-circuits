@@ -122,6 +122,10 @@ impl<T: Clone> Word<T> {
     pub fn new(limbs: [T; 2]) -> Self {
         Self(WordLimbs::<T, 2>::new(limbs))
     }
+    /// Map the word to other types
+    pub fn map<T2: Clone>(&self, mut func: impl FnMut(T) -> T2) -> Word<T2> {
+        Word(WordLimbs::<T2, 2>::new([func(self.lo()), func(self.hi())]))
+    }
 
     /// The high 128 bits limb
     pub fn hi(&self) -> T {
@@ -148,6 +152,13 @@ impl<T> std::ops::Deref for Word<T> {
 
     fn deref(&self) -> &Self::Target {
         &self.0
+    }
+}
+
+impl<F: Field> Word<Value<F>> {
+    /// Create a word of both lo hi limbs are known value 0
+    pub fn zero_value() -> Self {
+        Self::new([Value::known(F::ZERO), Value::known(F::ZERO)])
     }
 }
 
