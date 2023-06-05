@@ -8,9 +8,21 @@ use bus_mapping::evm::OpcodeId;
 use eth_types::{Bytecode, Field, Word};
 use halo2_proofs::{arithmetic::Field as Halo2Field, dev::MockProver, halo2curves::bn256::Fr};
 use log::{error, trace};
+use std::fs::OpenOptions;
+use std::io::prelude::*;
+
+fn write_test_start(test_number: u32) {
+    let mut file = OpenOptions::new()
+        .write(true)
+        .append(true)
+        .create(true)
+        .open("chiquito_timer_result.txt").unwrap();
+    writeln!(file, "{}", format!("START OF TEST {}", test_number));
+}
 
 #[test]
 fn bytecode_circuit_unusable_rows() {
+    write_test_start(1);
     assert_eq!(
         BytecodeCircuit::<Fr>::unusable_rows(),
         unusable_rows::<Fr, BytecodeCircuit::<Fr>>(()),
@@ -60,6 +72,7 @@ pub fn test_bytecode_circuit_unrolled<F: Field>(
 /// Verify unrolling code
 #[test]
 fn bytecode_unrolling() {
+    write_test_start(2);
     let k = 10;
     let mut rows = vec![];
     let mut bytecode = Bytecode::default();
@@ -132,12 +145,14 @@ fn bytecode_unrolling() {
 /// Tests a fully empty circuit
 #[test]
 fn bytecode_empty() {
+    write_test_start(3);
     let k = 9;
     test_bytecode_circuit_unrolled::<Fr>(k, vec![unroll(vec![])], true);
 }
 
 #[test]
 fn bytecode_simple() {
+    write_test_start(4);
     let k = 9;
     let bytecodes = vec![unroll(vec![7u8]), unroll(vec![6u8]), unroll(vec![5u8])];
     test_bytecode_circuit_unrolled::<Fr>(k, bytecodes, true);
@@ -146,12 +161,14 @@ fn bytecode_simple() {
 /// Tests a fully full circuit
 #[test]
 fn bytecode_full() {
+    write_test_start(5);
     let k = 9;
     test_bytecode_circuit_unrolled::<Fr>(k, vec![unroll(vec![7u8; 2usize.pow(k) - 11])], true);
 }
 
 #[test]
 fn bytecode_last_row_with_byte() {
+    write_test_start(6);
     let k = 9;
     // Last row must be a padding row, so we have one row less for actual bytecode
     test_bytecode_circuit_unrolled::<Fr>(k, vec![unroll(vec![7u8; 2usize.pow(k) - 10])], false);
@@ -160,6 +177,7 @@ fn bytecode_last_row_with_byte() {
 /// Tests a circuit with incomplete bytecode
 #[test]
 fn bytecode_incomplete() {
+    write_test_start(7);
     let k = 9;
     test_bytecode_circuit_unrolled::<Fr>(k, vec![unroll(vec![7u8; 2usize.pow(k) + 1])], false);
 }
@@ -167,6 +185,7 @@ fn bytecode_incomplete() {
 /// Tests multiple bytecodes in a single circuit
 #[test]
 fn bytecode_push() {
+    write_test_start(8);
     let k = 9;
     test_bytecode_circuit_unrolled::<Fr>(
         k,
@@ -189,6 +208,7 @@ fn bytecode_push() {
 /// Test invalid code_hash data
 #[test]
 fn bytecode_invalid_hash_data() {
+    write_test_start(9);
     let k = 9;
     let bytecode = vec![8u8, 2, 3, 8, 9, 7, 128];
     let unrolled = unroll(bytecode);
@@ -239,6 +259,7 @@ fn bytecode_invalid_index() {
 /// Test invalid byte data
 #[test]
 fn bytecode_invalid_byte_data() {
+    write_test_start(10);
     let k = 9;
     let bytecode = vec![8u8, 2, 3, 8, 9, 7, 128];
     let unrolled = unroll(bytecode);
@@ -266,6 +287,7 @@ fn bytecode_invalid_byte_data() {
 /// Test invalid is_code data
 #[test]
 fn bytecode_invalid_is_code() {
+    write_test_start(11);
     let k = 9;
     let bytecode = vec![
         OpcodeId::ADD.as_u8(),
@@ -302,6 +324,7 @@ fn bytecode_invalid_is_code() {
 #[should_panic]
 #[allow(clippy::clone_on_copy)]
 fn bytecode_soundness_bug_1() {
+    write_test_start(12);
     let k = 9;
     let bytecode = vec![1, 2, 3, 4];
     let bytecode_len = bytecode.len();

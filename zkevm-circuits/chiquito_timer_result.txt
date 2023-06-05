@@ -1,59 +1,70 @@
 cargo test --package zkevm-circuits --lib --features test -- bytecode_circuit::test --nocapture --test-threads=1
-
-Time elapsed for calling synthesize in the test is: 15.409958ms
-Time elapsed for calling synthesize in the test is: 6.89925ms
-Time elapsed for calling synthesize in the test is: 6.546708ms
-Time elapsed for calling synthesize in the test is: 176.99325ms
-Time elapsed for calling synthesize in the test is: 172.797625ms
-Time elapsed for calling synthesize in the test is: 171.814167ms
-Time elapsed for calling synthesize in the test is: 176.347625ms
-Time elapsed for calling synthesize in the test is: 171.940417ms
-Time elapsed for calling synthesize in the test is: 171.7135ms
-Time elapsed for calling synthesize in the test is: 11.781916ms
-Time elapsed for calling synthesize in the test is: 7.856041ms
-Time elapsed for calling synthesize in the test is: 7.858125ms
-Time elapsed for calling synthesize in the test is: 12.124333ms
-Time elapsed for calling synthesize in the test is: 8.154459ms
-Time elapsed for calling synthesize in the test is: 7.987083ms
-Time elapsed for calling synthesize in the test is: 11.686167ms
-Time elapsed for calling synthesize in the test is: 7.892375ms
-Time elapsed for calling synthesize in the test is: 7.767084ms
-Time elapsed for calling synthesize in the test is: 11.723083ms
-Time elapsed for calling synthesize in the test is: 7.8545ms
-Time elapsed for calling synthesize in the test is: 8.401833ms
-Time elapsed for calling synthesize in the test is: 12.111667ms
-Time elapsed for calling synthesize in the test is: 8.299417ms
-Time elapsed for calling synthesize in the test is: 7.974667ms
-Time elapsed for calling synthesize in the test is: 11.737416ms
-Time elapsed for calling synthesize in the test is: 7.828541ms
-Time elapsed for calling synthesize in the test is: 7.929667ms
-Time elapsed for calling synthesize in the test is: 11.690042ms
-Time elapsed for calling synthesize in the test is: 7.895583ms
-Time elapsed for calling synthesize in the test is: 7.891583ms
-Time elapsed for calling synthesize in the test is: 11.786791ms
-Time elapsed for calling synthesize in the test is: 7.819041ms
-Time elapsed for calling synthesize in the test is: 7.99625ms
-Time elapsed for calling synthesize in the test is: 11.760333ms
-Time elapsed for calling synthesize in the test is: 8.0015ms
-Time elapsed for calling synthesize in the test is: 7.847125ms
-Time elapsed for calling synthesize in the test is: 11.855ms
-Time elapsed for calling synthesize in the test is: 7.855583ms
-Time elapsed for calling synthesize in the test is: 7.824584ms
-Time elapsed for calling synthesize in the test is: 11.683541ms
-Time elapsed for calling synthesize in the test is: 7.84325ms
-Time elapsed for calling synthesize in the test is: 7.917916ms
-Time elapsed for calling synthesize in the test is: 176.6305ms
-Time elapsed for calling synthesize in the test is: 171.982542ms
-Time elapsed for calling synthesize in the test is: 171.376667ms
-Time elapsed for calling synthesize in the test is: 12.64725ms
-Time elapsed for calling synthesize in the test is: 9.101584ms
-Time elapsed for calling synthesize in the test is: 9.110458ms
-Time elapsed for calling synthesize in the test is: 10.8645ms
-Time elapsed for calling synthesize in the test is: 7.091375ms
-Time elapsed for calling synthesize in the test is: 7.087083ms
-Time elapsed for calling synthesize in the test is: 32.007625ms
-Time elapsed for calling synthesize in the test is: 30.212958ms
-Time elapsed for calling synthesize in the test is: 30.264291ms
-Time elapsed for calling synthesize in the test is: 284.735583ms
-Time elapsed for calling synthesize in the test is: 276.743375ms
-Time elapsed for calling synthesize in the test is: 276.5875ms
+START OF TEST 1
+START OF TEST 3
+Time elapsed for calling synthesize in the test is: 9.561083ms
+Time elapsed for calling synthesize in the test is: 5.553167ms
+Time elapsed for calling synthesize in the test is: 5.566916ms
+START OF TEST 5
+Time elapsed for calling synthesize in the test is: 177.379458ms
+Time elapsed for calling synthesize in the test is: 174.872167ms
+Time elapsed for calling synthesize in the test is: 173.605125ms
+START OF TEST 7
+Time elapsed for calling synthesize in the test is: 178.627166ms
+Time elapsed for calling synthesize in the test is: 173.167334ms
+Time elapsed for calling synthesize in the test is: 173.034125ms
+START OF TEST 10
+Time elapsed for calling synthesize in the test is: 11.60675ms
+Time elapsed for calling synthesize in the test is: 7.814ms
+Time elapsed for calling synthesize in the test is: 7.883ms
+Time elapsed for calling synthesize in the test is: 11.733209ms
+Time elapsed for calling synthesize in the test is: 7.721625ms
+Time elapsed for calling synthesize in the test is: 7.860375ms
+Time elapsed for calling synthesize in the test is: 11.687375ms
+Time elapsed for calling synthesize in the test is: 7.782333ms
+Time elapsed for calling synthesize in the test is: 7.792042ms
+Time elapsed for calling synthesize in the test is: 11.652167ms
+Time elapsed for calling synthesize in the test is: 7.899958ms
+Time elapsed for calling synthesize in the test is: 7.754875ms
+START OF TEST 9
+Time elapsed for calling synthesize in the test is: 11.470833ms
+Time elapsed for calling synthesize in the test is: 8.065709ms
+Time elapsed for calling synthesize in the test is: 7.762ms
+Time elapsed for calling synthesize in the test is: 11.653792ms
+Time elapsed for calling synthesize in the test is: 7.825875ms
+Time elapsed for calling synthesize in the test is: 7.798791ms
+Time elapsed for calling synthesize in the test is: 11.621333ms
+Time elapsed for calling synthesize in the test is: 7.825708ms
+Time elapsed for calling synthesize in the test is: 7.9315ms
+START OF TEST 11
+Time elapsed for calling synthesize in the test is: 11.865541ms
+Time elapsed for calling synthesize in the test is: 7.75525ms
+Time elapsed for calling synthesize in the test is: 7.93175ms
+Time elapsed for calling synthesize in the test is: 11.657167ms
+Time elapsed for calling synthesize in the test is: 7.787125ms
+Time elapsed for calling synthesize in the test is: 7.767459ms
+Time elapsed for calling synthesize in the test is: 11.597667ms
+Time elapsed for calling synthesize in the test is: 7.857042ms
+Time elapsed for calling synthesize in the test is: 7.798208ms
+Time elapsed for calling synthesize in the test is: 11.588375ms
+Time elapsed for calling synthesize in the test is: 7.824917ms
+Time elapsed for calling synthesize in the test is: 8.292333ms
+START OF TEST 6
+Time elapsed for calling synthesize in the test is: 178.5465ms
+Time elapsed for calling synthesize in the test is: 171.700958ms
+Time elapsed for calling synthesize in the test is: 171.729583ms
+START OF TEST 8
+Time elapsed for calling synthesize in the test is: 12.597ms
+Time elapsed for calling synthesize in the test is: 8.922917ms
+Time elapsed for calling synthesize in the test is: 8.975292ms
+START OF TEST 4
+Time elapsed for calling synthesize in the test is: 10.651708ms
+Time elapsed for calling synthesize in the test is: 7.017833ms
+Time elapsed for calling synthesize in the test is: 6.98675ms
+START OF TEST 12
+Time elapsed for calling synthesize in the test is: 31.665583ms
+Time elapsed for calling synthesize in the test is: 30.187958ms
+Time elapsed for calling synthesize in the test is: 30.118458ms
+START OF TEST 2
+Time elapsed for calling synthesize in the test is: 289.155458ms
+Time elapsed for calling synthesize in the test is: 281.064792ms
+Time elapsed for calling synthesize in the test is: 281.225375ms
