@@ -44,6 +44,12 @@ impl<F: Field> Circuit<F> for BytecodeCircuit<F> {
         (config, challenges): Self::Config,
         mut layouter: impl Layouter<F>,
     ) -> Result<(), Error> {
+        use std::fs::OpenOptions;
+        use std::io::prelude::*;
+        use std::time::{Instant, Duration};
+        println!("Start timer");
+        let start = Instant::now();  // start timer
+
         let challenges = challenges.values(&mut layouter);
 
         config.keccak_table.dev_load(
@@ -52,6 +58,17 @@ impl<F: Field> Circuit<F> for BytecodeCircuit<F> {
             &challenges,
         )?;
         self.synthesize_sub(&config, &challenges, &mut layouter)?;
+
+        let duration = start.elapsed();  // end timer
+        println!("Time elapsed: {:?}", duration);
+
+        let mut file = OpenOptions::new()
+        .write(true)
+        .append(true)
+        .create(true)
+        .open("chiquito_timer_result.txt")?;
+        writeln!(file, "Time elapsed for calling synthesize in the test is: {:?}", duration)?;
+
         Ok(())
     }
 }
