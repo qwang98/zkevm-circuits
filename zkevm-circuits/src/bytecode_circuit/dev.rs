@@ -78,7 +78,7 @@ impl<F: Field> Circuit<F> for BytecodeCircuit<F> {
         .write(true)
         .append(true)
         .create(true)
-        .open("original_timer_result.txt")?;
+        .open("chiquito_timer_result.txt")?;
         writeln!(file, "    Synthesize TOTAL {:?}", duration_total)?;
         writeln!(file, "        challenge {:?}", duration_challenge)?;
         writeln!(file, "        keccak table {:?}", duration_keccak)?;
