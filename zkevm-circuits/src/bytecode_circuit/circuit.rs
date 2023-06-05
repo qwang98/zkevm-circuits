@@ -701,6 +701,12 @@ impl<F: Field> BytecodeCircuitConfig<F> {
     }
 
     fn set_row(&self, region: &mut Region<'_, F>, row: BytecodeCircuitRow<F>) -> Result<(), Error> {
+        // use std::fs::OpenOptions;
+        // use std::io::prelude::*;
+        // use std::time::{Instant, Duration};
+
+        // println!("Start set_row timer");
+        // let timer_set = Instant::now();  // start timer
         let offset = row.offset;
         // q_enable
         region.assign_fixed(
@@ -767,6 +773,14 @@ impl<F: Field> BytecodeCircuitConfig<F> {
 
         self.index_length_diff_is_zero
             .assign(region, offset, Value::known(row.diff()))?;
+
+        // let duration_set = timer_set.elapsed();  // end timer
+        // let mut file = OpenOptions::new()
+        // .write(true)
+        // .append(true)
+        // .create(true)
+        // .open("original_timer_result.txt")?;
+        // writeln!(file, "                    set row (halo2 assignments)  {:?}", duration_set)?;
 
         Ok(())
     }
