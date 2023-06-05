@@ -136,6 +136,7 @@ impl<F: Field> SubCircuit<F> for BytecodeCircuit<F> {
         challenges: &Challenges<Value<F>>,
         layouter: &mut impl Layouter<F>,
     ) -> Result<(), Error> {
+        
         config.push_data_table.synthesize(layouter, ());
         config.compiled.synthesize(
             layouter,
