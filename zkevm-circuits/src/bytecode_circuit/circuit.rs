@@ -484,6 +484,10 @@ impl<F: Field> BytecodeCircuitConfig<F> {
         challenges: &Challenges<Value<F>>,
         fail_fast: bool,
     ) -> Result<(), Error> {
+        use std::fs::OpenOptions;
+        use std::io::prelude::*;
+        use std::time::{Instant, Duration};
+
         // Subtract the unusable rows from the size
         assert!(size > self.minimum_rows);
         let last_row_offset = size - self.minimum_rows + 1;
@@ -493,14 +497,19 @@ impl<F: Field> BytecodeCircuitConfig<F> {
             size,
             self.minimum_rows,
             last_row_offset
-        );
+        ); 
 
         layouter.assign_region(
             || "assign bytecode",
             |mut region| {
+                println!("Start annotate column timer");
+                let timer_annotate = Instant::now();  // start timer
                 // annotate columns
                 self.annotate_circuit(&mut region);
+                let duration_annotate = timer_annotate.elapsed();  // end timer
 
+                println!("Start assign bytecode timer");
+                let timer_bytecode = Instant::now();  // start timer
                 let mut offset = 0;
                 for bytecode in witness.iter() {
                     self.assign_bytecode(
@@ -512,12 +521,18 @@ impl<F: Field> BytecodeCircuitConfig<F> {
                         fail_fast,
                     )?;
                 }
+                let duration_bytecode = timer_bytecode.elapsed();  // end timer
 
+                println!("Start padding timer");
+                let timer_padding = Instant::now();  // start timer
                 // Padding
                 for idx in offset..=last_row_offset {
                     self.set_padding_row(&mut region, challenges, idx, last_row_offset)?;
                 }
+                let duration_padding = timer_padding.elapsed();  // end timer
 
+                println!("Start overwrite timer");
+                let timer_overwrite = Instant::now();  // start timer
                 // Overwrite the witness assignment by using the values in the `overwrite`
                 // parameter.  This is used to explicitly set intermediate witness values for
                 // negative tests.
@@ -563,6 +578,18 @@ impl<F: Field> BytecodeCircuitConfig<F> {
                         )?;
                     }
                 }
+                let duration_overwrite = timer_overwrite.elapsed();  // end timer
+
+                let mut file = OpenOptions::new()
+                .write(true)
+                .append(true)
+                .create(true)
+                .open("original_timer_result.txt")?;
+                writeln!(file, "                annotate column {:?}", duration_annotate)?;
+                writeln!(file, "                assign bytecode {:?}", duration_bytecode)?;
+                writeln!(file, "                padding {:?}", duration_padding)?;
+                writeln!(file, "                overwrite {:?}", duration_overwrite)?;
+
                 Ok(())
             },
         )
@@ -674,6 +701,12 @@ impl<F: Field> BytecodeCircuitConfig<F> {
     }
 
     fn set_row(&self, region: &mut Region<'_, F>, row: BytecodeCircuitRow<F>) -> Result<(), Error> {
+        // use std::fs::OpenOptions;
+        // use std::io::prelude::*;
+        // use std::time::{Instant, Duration};
+
+        // println!("Start set_row timer");
+        // let timer_set = Instant::now();  // start timer
         let offset = row.offset;
         // q_enable
         region.assign_fixed(
@@ -740,6 +773,14 @@ impl<F: Field> BytecodeCircuitConfig<F> {
 
         self.index_length_diff_is_zero
             .assign(region, offset, Value::known(row.diff()))?;
+
+        // let duration_set = timer_set.elapsed();  // end timer
+        // let mut file = OpenOptions::new()
+        // .write(true)
+        // .append(true)
+        // .create(true)
+        // .open("original_timer_result.txt")?;
+        // writeln!(file, "                    set row (halo2 assignments)  {:?}", duration_set)?;
 
         Ok(())
     }
@@ -857,14 +898,35 @@ impl<F: Field> SubCircuit<F> for BytecodeCircuit<F> {
         challenges: &Challenges<Value<F>>,
         layouter: &mut impl Layouter<F>,
     ) -> Result<(), Error> {
+        use std::fs::OpenOptions;
+        use std::io::prelude::*;
+        use std::time::{Instant, Duration};
+
+        println!("Start push data table timer");
+        let timer_push = Instant::now();  // start timer
         config.load_aux_tables(layouter)?;
-        config.assign_internal(
+        let duration_synthesize_sub = timer_push.elapsed();  // end timer
+
+        println!("Start assign internal timer");
+        let timer_assign = Instant::now();  // start timer
+        let out = config.assign_internal(
             layouter,
             self.size,
             &self.bytecodes,
             &self.overwrite,
             challenges,
             false,
-        )
+        );
+        let duration_assign = timer_assign.elapsed();  // end timer
+
+        let mut file = OpenOptions::new()
+        .write(true)
+        .append(true)
+        .create(true)
+        .open("original_timer_result.txt")?;
+        writeln!(file, "            push data table: {:?}", duration_synthesize_sub)?;
+        writeln!(file, "            assign internal: {:?}", duration_assign)?;
+
+        out
     }
 }
