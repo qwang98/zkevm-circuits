@@ -136,7 +136,17 @@ impl<F: Field> SubCircuit<F> for BytecodeCircuit<F> {
         challenges: &Challenges<Value<F>>,
         layouter: &mut impl Layouter<F>,
     ) -> Result<(), Error> {
+        use std::fs::OpenOptions;
+        use std::io::prelude::*;
+        use std::time::{Instant, Duration};
+
+        println!("Start push data table timer");
+        let timer_push = Instant::now();  // start timer
         config.push_data_table.synthesize(layouter, ());
+        let duration_synthesize_sub = timer_push.elapsed();  // end timer
+
+        println!("Start assign + padding + overwrite + annotate timer");
+        let timer_assign = Instant::now();  // start timer
         config.compiled.synthesize(
             layouter,
             (
@@ -146,6 +156,15 @@ impl<F: Field> SubCircuit<F> for BytecodeCircuit<F> {
                 self.overwrite_len,
             ),
         );
+        let duration_assign = timer_assign.elapsed();  // end timer
+
+        let mut file = OpenOptions::new()
+        .write(true)
+        .append(true)
+        .create(true)
+        .open("chiquito_timer_result.txt")?;
+        writeln!(file, "            push data table: {:?}", duration_synthesize_sub)?;
+        writeln!(file, "            assign + padding + overwrite + annotate: {:?}", duration_assign)?;
 
         Ok(())
     }

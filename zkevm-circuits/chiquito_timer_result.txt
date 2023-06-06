@@ -1,0 +1,356 @@
+cargo test --package zkevm-circuits --lib --features test -- bytecode_circuit::test --nocapture --test-threads=1
+
+START OF TEST 1
+START OF TEST 3
+            push data table: 2.207542ms
+            assign + padding + overwrite + annotate: 11.79875ms
+    Synthesize TOTAL 15.260167ms
+        challenge 49.958µs
+        keccak table 1.029292ms
+        synthesize_sub 14.180917ms
+            push data table: 745.625µs
+            assign + padding + overwrite + annotate: 6.182833ms
+    Synthesize TOTAL 7.495209ms
+        challenge 2.042µs
+        keccak table 422.959µs
+        synthesize_sub 7.070208ms
+            push data table: 660.667µs
+            assign + padding + overwrite + annotate: 5.629958ms
+    Synthesize TOTAL 6.678125ms
+        challenge 417ns
+        keccak table 263.583µs
+        synthesize_sub 6.414125ms
+START OF TEST 5
+            push data table: 1.301791ms
+            assign + padding + overwrite + annotate: 181.283959ms
+    Synthesize TOTAL 183.402499ms
+        challenge 625ns
+        keccak table 624.708µs
+        synthesize_sub 182.777166ms
+            push data table: 597.417µs
+            assign + padding + overwrite + annotate: 175.644958ms
+    Synthesize TOTAL 177.794958ms
+        challenge 875ns
+        keccak table 1.35825ms
+        synthesize_sub 176.435833ms
+            push data table: 571.875µs
+            assign + padding + overwrite + annotate: 174.983458ms
+    Synthesize TOTAL 177.022625ms
+        challenge 792ns
+        keccak table 1.282041ms
+        synthesize_sub 175.739792ms
+START OF TEST 7
+            push data table: 1.219792ms
+            assign + padding + overwrite + annotate: 179.778166ms
+    Synthesize TOTAL 181.775708ms
+        challenge 625ns
+        keccak table 580.375µs
+        synthesize_sub 181.194708ms
+            push data table: 638.291µs
+            assign + padding + overwrite + annotate: 175.488291ms
+    Synthesize TOTAL 177.732084ms
+        challenge 917ns
+        keccak table 1.407583ms
+        synthesize_sub 176.323584ms
+            push data table: 612.625µs
+            assign + padding + overwrite + annotate: 177.748209ms
+    Synthesize TOTAL 179.914583ms
+        challenge 750ns
+        keccak table 1.370833ms
+        synthesize_sub 178.543ms
+START OF TEST 10
+            push data table: 1.227667ms
+            assign + padding + overwrite + annotate: 10.222167ms
+    Synthesize TOTAL 11.785292ms
+        challenge 625ns
+        keccak table 199.042µs
+        synthesize_sub 11.585625ms
+            push data table: 568.208µs
+            assign + padding + overwrite + annotate: 6.980458ms
+    Synthesize TOTAL 7.905042ms
+        challenge 833ns
+        keccak table 250.125µs
+        synthesize_sub 7.654084ms
+            push data table: 575.625µs
+            assign + padding + overwrite + annotate: 6.880583ms
+    Synthesize TOTAL 7.785375ms
+        challenge 1.209µs
+        keccak table 256.041µs
+        synthesize_sub 7.528125ms
+            push data table: 1.235792ms
+            assign + padding + overwrite + annotate: 10.118542ms
+    Synthesize TOTAL 11.715166ms
+        challenge 416ns
+        keccak table 200.75µs
+        synthesize_sub 11.514ms
+            push data table: 579.916µs
+            assign + padding + overwrite + annotate: 7.076167ms
+    Synthesize TOTAL 8.028543ms
+        challenge 667ns
+        keccak table 238.292µs
+        synthesize_sub 7.789584ms
+            push data table: 578.375µs
+            assign + padding + overwrite + annotate: 6.92625ms
+    Synthesize TOTAL 7.843043ms
+        challenge 792ns
+        keccak table 251.209µs
+        synthesize_sub 7.591042ms
+            push data table: 1.199666ms
+            assign + padding + overwrite + annotate: 10.08525ms
+    Synthesize TOTAL 11.663917ms
+        challenge 875ns
+        keccak table 217.5µs
+        synthesize_sub 11.445542ms
+            push data table: 580.917µs
+            assign + padding + overwrite + annotate: 6.988125ms
+    Synthesize TOTAL 7.905415ms
+        challenge 458ns
+        keccak table 233.666µs
+        synthesize_sub 7.671291ms
+            push data table: 571.709µs
+            assign + padding + overwrite + annotate: 6.889917ms
+    Synthesize TOTAL 7.820791ms
+        challenge 791ns
+        keccak table 235.5µs
+        synthesize_sub 7.5845ms
+            push data table: 1.192208ms
+            assign + padding + overwrite + annotate: 10.270667ms
+    Synthesize TOTAL 11.85ms
+        challenge 667ns
+        keccak table 202.958µs
+        synthesize_sub 11.646375ms
+            push data table: 577.584µs
+            assign + padding + overwrite + annotate: 6.838208ms
+    Synthesize TOTAL 7.765708ms
+        challenge 1.125µs
+        keccak table 271.75µs
+        synthesize_sub 7.492833ms
+            push data table: 583.542µs
+            assign + padding + overwrite + annotate: 7.088625ms
+    Synthesize TOTAL 8.045583ms
+        challenge 333ns
+        keccak table 231.916µs
+        synthesize_sub 7.813334ms
+START OF TEST 9
+            push data table: 1.201459ms
+            assign + padding + overwrite + annotate: 10.298083ms
+    Synthesize TOTAL 11.832041ms
+        challenge 625ns
+        keccak table 194.791µs
+        synthesize_sub 11.636625ms
+            push data table: 591.792µs
+            assign + padding + overwrite + annotate: 6.870417ms
+    Synthesize TOTAL 7.828417ms
+        challenge 1.25µs
+        keccak table 270.917µs
+        synthesize_sub 7.55625ms
+            push data table: 569.583µs
+            assign + padding + overwrite + annotate: 7.065291ms
+    Synthesize TOTAL 8.001874ms
+        challenge 375ns
+        keccak table 228.166µs
+        synthesize_sub 7.773333ms
+            push data table: 1.204792ms
+            assign + padding + overwrite + annotate: 10.243917ms
+    Synthesize TOTAL 11.769459ms
+        challenge 459ns
+        keccak table 195.875µs
+        synthesize_sub 11.573125ms
+            push data table: 568.25µs
+            assign + padding + overwrite + annotate: 6.925708ms
+    Synthesize TOTAL 7.850458ms
+        challenge 1.125µs
+        keccak table 270.25µs
+        synthesize_sub 7.579083ms
+            push data table: 586.125µs
+            assign + padding + overwrite + annotate: 7.177208ms
+    Synthesize TOTAL 8.134833ms
+        challenge 333ns
+        keccak table 230.167µs
+        synthesize_sub 7.904333ms
+            push data table: 1.223916ms
+            assign + padding + overwrite + annotate: 10.274292ms
+    Synthesize TOTAL 11.813251ms
+        challenge 417ns
+        keccak table 193.75µs
+        synthesize_sub 11.619084ms
+            push data table: 564.25µs
+            assign + padding + overwrite + annotate: 7.009875ms
+    Synthesize TOTAL 7.924583ms
+        challenge 875ns
+        keccak table 250µs
+        synthesize_sub 7.673708ms
+            push data table: 584.167µs
+            assign + padding + overwrite + annotate: 6.9635ms
+    Synthesize TOTAL 7.890792ms
+        challenge 1.25µs
+        keccak table 253.125µs
+        synthesize_sub 7.636417ms
+START OF TEST 11
+            push data table: 1.217833ms
+            assign + padding + overwrite + annotate: 10.245084ms
+    Synthesize TOTAL 11.791125ms
+        challenge 458ns
+        keccak table 196.209µs
+        synthesize_sub 11.594458ms
+            push data table: 577.125µs
+            assign + padding + overwrite + annotate: 7.064042ms
+    Synthesize TOTAL 8.032541ms
+        challenge 1.25µs
+        keccak table 258.958µs
+        synthesize_sub 7.772333ms
+            push data table: 583.083µs
+            assign + padding + overwrite + annotate: 7.056084ms
+    Synthesize TOTAL 8.000165ms
+        challenge 916ns
+        keccak table 264.666µs
+        synthesize_sub 7.734583ms
+            push data table: 1.213542ms
+            assign + padding + overwrite + annotate: 10.167167ms
+    Synthesize TOTAL 11.755375ms
+        challenge 708ns
+        keccak table 205.958µs
+        synthesize_sub 11.548709ms
+            push data table: 580.5µs
+            assign + padding + overwrite + annotate: 6.899167ms
+    Synthesize TOTAL 7.850875ms
+        challenge 1.167µs
+        keccak table 280.958µs
+        synthesize_sub 7.56875ms
+            push data table: 579.125µs
+            assign + padding + overwrite + annotate: 6.9685ms
+    Synthesize TOTAL 7.926666ms
+        challenge 542ns
+        keccak table 229.958µs
+        synthesize_sub 7.696166ms
+            push data table: 1.192167ms
+            assign + padding + overwrite + annotate: 10.332209ms
+    Synthesize TOTAL 11.907793ms
+        challenge 709ns
+        keccak table 210.917µs
+        synthesize_sub 11.696167ms
+            push data table: 571.792µs
+            assign + padding + overwrite + annotate: 6.865083ms
+    Synthesize TOTAL 7.793082ms
+        challenge 875ns
+        keccak table 271.791µs
+        synthesize_sub 7.520416ms
+            push data table: 587.875µs
+            assign + padding + overwrite + annotate: 6.901958ms
+    Synthesize TOTAL 7.934417ms
+        challenge 750ns
+        keccak table 256µs
+        synthesize_sub 7.677667ms
+            push data table: 1.209084ms
+            assign + padding + overwrite + annotate: 10.348292ms
+    Synthesize TOTAL 11.939833ms
+        challenge 833ns
+        keccak table 213.625µs
+        synthesize_sub 11.725375ms
+            push data table: 582.958µs
+            assign + padding + overwrite + annotate: 6.904459ms
+    Synthesize TOTAL 7.822293ms
+        challenge 875ns
+        keccak table 261.709µs
+        synthesize_sub 7.559709ms
+            push data table: 579.666µs
+            assign + padding + overwrite + annotate: 7.063208ms
+    Synthesize TOTAL 7.988957ms
+        challenge 208ns
+        keccak table 222.333µs
+        synthesize_sub 7.766416ms
+START OF TEST 6
+            push data table: 1.245833ms
+            assign + padding + overwrite + annotate: 180.132458ms
+    Synthesize TOTAL 182.171499ms
+        challenge 500ns
+        keccak table 594.583µs
+        synthesize_sub 181.576416ms
+            push data table: 603.083µs
+            assign + padding + overwrite + annotate: 175.695583ms
+    Synthesize TOTAL 177.879458ms
+        challenge 1.166µs
+        keccak table 1.376417ms
+        synthesize_sub 176.501875ms
+            push data table: 615.833µs
+            assign + padding + overwrite + annotate: 175.374542ms
+    Synthesize TOTAL 177.540374ms
+        challenge 833ns
+        keccak table 1.357625ms
+        synthesize_sub 176.181916ms
+START OF TEST 8
+            push data table: 1.224958ms
+            assign + padding + overwrite + annotate: 10.561041ms
+    Synthesize TOTAL 12.734125ms
+        challenge 750ns
+        keccak table 791.791µs
+        synthesize_sub 11.941584ms
+            push data table: 582.917µs
+            assign + padding + overwrite + annotate: 7.488834ms
+    Synthesize TOTAL 9.213458ms
+        challenge 958ns
+        keccak table 1.006667ms
+        synthesize_sub 8.205833ms
+            push data table: 573.375µs
+            assign + padding + overwrite + annotate: 7.414834ms
+    Synthesize TOTAL 9.046708ms
+        challenge 750ns
+        keccak table 975.125µs
+        synthesize_sub 8.070833ms
+START OF TEST 4
+            push data table: 1.187542ms
+            assign + padding + overwrite + annotate: 8.964833ms
+    Synthesize TOTAL 10.785417ms
+        challenge 625ns
+        keccak table 495.667µs
+        synthesize_sub 10.289125ms
+            push data table: 589.291µs
+            assign + padding + overwrite + annotate: 5.75ms
+    Synthesize TOTAL 7.135291ms
+        challenge 916ns
+        keccak table 672.375µs
+        synthesize_sub 6.462ms
+            push data table: 577.333µs
+            assign + padding + overwrite + annotate: 5.800666ms
+    Synthesize TOTAL 7.076458ms
+        challenge 291ns
+        keccak table 590.125µs
+        synthesize_sub 6.486042ms
+START OF TEST 12
+            push data table: 1.186375ms
+            assign + padding + overwrite + annotate: 30.466708ms
+    Synthesize TOTAL 31.999583ms
+        challenge 666ns
+        keccak table 199.333µs
+        synthesize_sub 31.799584ms
+            push data table: 564.75µs
+            assign + padding + overwrite + annotate: 29.496333ms
+    Synthesize TOTAL 30.426749ms
+        challenge 833ns
+        keccak table 246.708µs
+        synthesize_sub 30.179208ms
+            push data table: 583.25µs
+            assign + padding + overwrite + annotate: 29.366791ms
+    Synthesize TOTAL 30.3455ms
+        challenge 875ns
+        keccak table 239.333µs
+        synthesize_sub 30.105292ms
+START OF TEST 2
+            push data table: 1.198167ms
+            assign + padding + overwrite + annotate: 283.608084ms
+    Synthesize TOTAL 285.846583ms
+        challenge 875ns
+        keccak table 850µs
+        synthesize_sub 284.995708ms
+            push data table: 600.75µs
+            assign + padding + overwrite + annotate: 275.143584ms
+    Synthesize TOTAL 277.977501ms
+        challenge 875ns
+        keccak table 2.031042ms
+        synthesize_sub 275.945584ms
+            push data table: 598.958µs
+            assign + padding + overwrite + annotate: 274.694875ms
+    Synthesize TOTAL 277.531542ms
+        challenge 917ns
+        keccak table 2.074958ms
+        synthesize_sub 275.455667ms
